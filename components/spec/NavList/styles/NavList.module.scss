@@ -1,0 +1,42 @@
+@use "../../../../styles/components/responsive";
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: black;
+
+    &:nth-child(4) {
+      padding: 0.38rem 1.65rem;
+      border: 0.15rem solid rgb(107, 126, 60);
+      color: black;
+
+      &:hover {
+        color: #f1faff;
+        background-color: rgb(107, 126, 60);
+      }
+    }
+
+    @include responsive.md {
+      display: none;
+    }
+  }
+
+  button {
+    all: unset;
+    display: none;
+
+    @include responsive.md {
+      display: inline-block;
+    }
+
+    svg {
+      cursor: pointer;
+    }
+  }
+}

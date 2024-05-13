@@ -1,0 +1,33 @@
+@use "../../../../styles/components/responsive";
+
+.container {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 2rem);
+
+  @include responsive.md {
+    display: flex;
+  }
+
+  nav {
+    position: relative;
+    z-index: 10;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      list-style-type: none;
+
+      li {
+        a {
+          text-decoration: none;
+          font-size: 1.1rem;
+          font-weight: 500;
+          color: black;
+        }
+      }
+    }
+  }
+}
