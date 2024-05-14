@@ -1,1 +1,8 @@
-/*# sourceMappingURL=App.module.css.map */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .spinner {
+  margin-top: 42vh;
+}/*# sourceMappingURL=App.module.css.map */

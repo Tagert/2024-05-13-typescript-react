@@ -1,0 +1,17 @@
+.loginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 6.5rem;
+  height: 2rem;
+  border: 0.1rem solid #161a30;
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  outline: none;
+  color: #161a30;
+  background: linear-gradient(270deg, rgb(227, 225, 217) 0%, rgb(242, 239, 229) 100%);
+  cursor: pointer;
+}
+.loginBtn:hover {
+  font-weight: bold;
+}/*# sourceMappingURL=Button.module.css.map */

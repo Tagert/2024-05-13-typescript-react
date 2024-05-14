@@ -1,9 +1,12 @@
 import styles from "./styles/LoginForm.module.css";
+import Link from "next/link";
 import x_icon from "../../../public/assets/x_icon.svg";
 import Image from "next/image";
 import axios from "axios";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { Button } from "../../common/Button/Button";
+import cookie from "js-cookie";
 
 const LoginForm = () => {
   const router = useRouter();
@@ -12,8 +15,10 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [isError, setError] = useState(false);
   const [isBadData, setBadData] = useState(false);
+  const [isLoading, setLoading] = useState(false);
 
   const onLogin = async () => {
+    setLoading(true);
     const loginBody = {
       email: email,
       password: password,
@@ -21,6 +26,7 @@ const LoginForm = () => {
 
     if (!email || !password) {
       setError(true);
+      setLoading(false);
       return;
     }
 
@@ -34,24 +40,29 @@ const LoginForm = () => {
 
       if (res.status === 201) {
         setBadData(false);
-        localStorage.setItem("jwt_token", res.data.jwt_token);
+        cookie.set("jwt_token", res.data.jwt_token);
         localStorage.setItem("jwt_refresh_token", res.data.jwt_refresh_token);
         router.push("/");
       }
+
+      setLoading(false);
 
       console.log("response:", res);
     } catch (err) {
       setBadData(true);
       console.log("err:", err);
+      setLoading(false);
     }
   };
 
   return (
     <div className={styles.login_card}>
       <div className={styles.login_modal} id="loginModal">
-        <button className={styles.loginCloseBtn}>
-          <Image alt="exit icon" className={styles.x_icon} src={x_icon} />
-        </button>
+        <Link href="/" className={styles.loginCloseBtn}>
+          <button>
+            <Image alt="exit icon" className={styles.x_icon} src={x_icon} />
+          </button>
+        </Link>
         <div className={styles.active_login}>
           <h4>Welcome back</h4>
           <p>Log into your Account</p>
@@ -90,9 +101,8 @@ const LoginForm = () => {
         </div>
 
         <div className={styles.btn_info}>
-          <button className={styles.loginBtn} onClick={onLogin}>
-            Login
-          </button>
+          <Button isLoading={isLoading} onLogin={onLogin} title="Login" />
+
           {isError && (
             <p className={styles.error}>Please fill all the inputs</p>
           )}

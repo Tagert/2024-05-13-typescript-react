@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 17rem;
+  height: 24rem;
+  padding: 1rem;
+  border: 0.1rem solid black;
+  border-radius: 0.6rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background-color: #d3d9d4;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.container:hover {
+  scale: 1.05;
+}
+.container .imageBox {
+  border-radius: 0.6rem;
+  box-shadow: rgba(149, 157, 165, 0.35) 0px 8px 24px;
+  overflow: hidden;
+}
+.container .imageBox img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .descriptionBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.container .descriptionBox h3 {
+  text-align: center;
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+}
+.container .descriptionBox h4,
+.container .descriptionBox h5,
+.container .descriptionBox h6,
+.container .descriptionBox p {
+  display: flex;
+  justify-content: space-between;
+  width: 15rem;
+}
+.container .descriptionBox h4,
+.container .descriptionBox h5 {
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+.container .descriptionBox h4 span,
+.container .descriptionBox h5 span {
+  font-weight: 600;
+}
+.container .descriptionBox h5 {
+  padding-bottom: 0.4rem;
+  border-bottom: 0.1rem solid black;
+}
+.container .descriptionBox h6 {
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+.container .descriptionBox h6 span {
+  font-weight: 600;
+}
+.container .descriptionBox p {
+  font-size: 0.7rem;
+}
+.container .descriptionBox p span {
+  font-weight: 600;
+}/*# sourceMappingURL=Card.module.css.map */

@@ -20,13 +20,16 @@
     .loginCloseBtn {
       width: 1.2rem;
       align-self: flex-end;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
 
-      .x_icon {
-        width: 1.8rem;
-        height: 1.8rem;
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        .x_icon {
+          width: 1.8rem;
+          height: 1.8rem;
+        }
       }
     }
 
@@ -90,26 +93,6 @@
       align-items: center;
       justify-content: flex-start;
       gap: 0.8rem;
-
-      .loginBtn {
-        min-width: 5rem;
-        border: 0.1rem solid #161a30;
-        border-radius: 0.4rem;
-        padding: 0.25rem;
-        margin-top: 1rem;
-        outline: none;
-        color: #161a30;
-        background: linear-gradient(
-          270deg,
-          rgba(227, 225, 217, 1) 0%,
-          rgba(242, 239, 229, 1) 100%
-        );
-        cursor: pointer;
-
-        &:hover {
-          font-weight: bold;
-        }
-      }
 
       .error {
         height: 1rem;

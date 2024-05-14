@@ -7,16 +7,16 @@
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
-  color: black;
+  color: #212a31;
 }
 .container a:nth-child(4) {
   padding: 0.38rem 1.65rem;
-  border: 0.15rem solid rgb(107, 126, 60);
-  color: black;
+  border-radius: 0.2rem;
+  border: 0.15rem solid #212a31;
 }
 .container a:nth-child(4):hover {
-  color: #f1faff;
-  background-color: rgb(107, 126, 60);
+  color: #d3d9d4;
+  background-color: #212a31;
 }
 @media screen and (max-width: 950px) {
   .container a {

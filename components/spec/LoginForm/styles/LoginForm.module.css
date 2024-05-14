@@ -20,11 +20,13 @@
 .login_card .login_modal .loginCloseBtn {
   width: 1.2rem;
   align-self: flex-end;
+}
+.login_card .login_modal .loginCloseBtn button {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
-.login_card .login_modal .loginCloseBtn .x_icon {
+.login_card .login_modal .loginCloseBtn button .x_icon {
   width: 1.8rem;
   height: 1.8rem;
 }
@@ -86,20 +88,6 @@
   align-items: center;
   justify-content: flex-start;
   gap: 0.8rem;
-}
-.login_card .login_modal .btn_info .loginBtn {
-  min-width: 5rem;
-  border: 0.1rem solid #161a30;
-  border-radius: 0.4rem;
-  padding: 0.25rem;
-  margin-top: 1rem;
-  outline: none;
-  color: #161a30;
-  background: linear-gradient(270deg, rgb(227, 225, 217) 0%, rgb(242, 239, 229) 100%);
-  cursor: pointer;
-}
-.login_card .login_modal .btn_info .loginBtn:hover {
-  font-weight: bold;
 }
 .login_card .login_modal .btn_info .error {
   height: 1rem;
