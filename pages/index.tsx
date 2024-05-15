@@ -1,62 +1,83 @@
 import styles from "../styles/App.module.css";
 import cookies from "js-cookie";
 import axios from "axios";
+import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import { getCookie } from "cookies-next";
 import { TicketType } from "../types/ticket.type";
 import { UserType } from "../types/user.type";
 import { Spinner } from "../components/common/Spinner/Spinner";
 import { Header } from "../layouts/Header/Header";
 import { Main } from "../layouts/Main/Main";
 
-const App = () => {
-  const [tickets, setTickets] = useState<TicketType[] | null>(null);
-  const [users, setUsers] = useState<UserType[] | null>(null);
+type AppProps = {
+  tickets: TicketType[];
+  users: UserType[];
+  status: any;
+};
 
-  const fetchGames = async () => {
-    try {
-      const headers = {
-        authorization: cookies.get("jwt_token"),
-      };
+const App = ({ tickets, users, status }: AppProps) => {
+  const router = useRouter();
 
-      const res = await axios.get("http://localhost:3000/tickets", {
-        headers,
-      });
+  // const [tickets, setTickets] = useState<TicketType[] | null>(null);
+  // const [users, setUsers] = useState<UserType[] | null>(null);
 
-      setTickets(res.data.ticketList);
+  // const fetchGames = async () => {
+  //   try {
+  //     const headers = {
+  //       authorization: cookies.get("jwt_token"),
+  //     };
 
-      console.log("response:", res);
-    } catch (err) {
-      console.log("err:", err);
-    }
-  };
+  //     const res = await axios.get(`${process.env.SERVER_URL}/tickets`, {
+  //       headers,
+  //     });
 
-  const fetchUsers = async () => {
-    try {
-      const headers = {
-        authorization: cookies.get("jwt_token"),
-      };
+  //     setTickets(res.data.ticketList);
 
-      const res = await axios.get("http://localhost:3000/users", {
-        headers,
-      });
+  //     console.log("response:", res);
+  //   } catch (err) {
+  //     console.log("err:", err);
+  //     // @ts-expect-error this is correct way to catch error
+  //     if (err.response.status === 401) {
+  //       router.push("/login");
+  //     }
+  //   }
+  // };
 
-      setUsers(res.data.usersList);
+  // const fetchUsers = async () => {
+  //   try {
+  //     const headers = {
+  //       authorization: cookies.get("jwt_token"),
+  //     };
 
-      console.log("response:", res);
-    } catch (err) {
-      console.log("err:", err);
-    }
-  };
+  //     const res = await axios.get(`${process.env.SERVER_URL}/users`, {
+  //       headers,
+  //     });
+
+  //     setUsers(res.data.usersList);
+
+  //     console.log("response:", res);
+  //   } catch (err) {
+  //     console.log("err:", err);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchGames();
+  //   fetchUsers();
+  // }, []);
 
   useEffect(() => {
-    fetchGames();
-    fetchUsers();
+    if (status === 401) {
+      router.push("/login");
+    }
   }, []);
+
   return (
     <div className={styles.container}>
       <Header />
       {tickets ? (
-        <Main tickets={tickets} users={users || []} />
+        <Main tickets={tickets} users={users || []} handleDelete={() => {}} />
       ) : (
         <div className={styles.spinner}>
           <Spinner />
@@ -67,3 +88,34 @@ const App = () => {
 };
 
 export default App;
+
+export async function getServerSideProps(ctx: any) {
+  try {
+    const headers = {
+      authorization: getCookie("jwt_token", ctx),
+    };
+
+    const ticketsRes = await axios.get(`${process.env.SERVER_URL}/tickets`, {
+      headers,
+    });
+
+    const usersRes = await axios.get(`${process.env.SERVER_URL}/users`, {
+      headers,
+    });
+
+    return {
+      props: {
+        tickets: ticketsRes.data.ticketList,
+        users: usersRes.data.usersList,
+        status: ticketsRes.status,
+      },
+    };
+  } catch (err) {
+    return {
+      props: {
+        // @ts-expect-error
+        status: err.response.status,
+      },
+    };
+  }
+}

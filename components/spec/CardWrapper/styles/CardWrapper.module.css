@@ -2,6 +2,69 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 2rem 4rem;
+}
+.container .detailsContainer {
+  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 25rem;
+  height: 18.5rem;
+  padding: 2rem;
+  border: 0.1rem solid black;
+  border-radius: 0.6rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background-color: #d3d9d4;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.container .detailsContainer .ticketDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.container .detailsContainer .ticketDescription h3 {
+  text-align: center;
+  width: 20rem;
+  font-size: 1.1rem;
+}
+.container .detailsContainer .ticketDescription p {
+  text-align: justify;
+}
+.container .detailsContainer .ticketDescription p:nth-child(3) {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+.container .detailsContainer .ticketDescription .buttonHolder {
+  display: flex;
+  gap: 1rem;
+}
+.container .detailsContainer .ticketDescription .buttonHolder button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 6.5rem;
+  height: 2rem;
+  border: 0.1rem solid #212a31;
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  outline: none;
+  color: #212a31;
+  background: linear-gradient(270deg, rgb(227, 225, 217) 0%, rgb(242, 239, 229) 100%);
+  cursor: pointer;
+}
+.container .detailsContainer .ticketDescription .buttonHolder button:hover {
+  color: #212a31;
+  background: #e94a23;
+}
+.container .detailsContainer .ticketDescription .buttonHolder button:last-child:hover {
+  color: #d3d9d4;
+  background: #212a31;
+}
+.container .linkHolder {
+  text-decoration: none;
 }/*# sourceMappingURL=CardWrapper.module.css.map */

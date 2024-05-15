@@ -3,7 +3,7 @@ import Link from "next/link";
 import x_icon from "../../../public/assets/x_icon.svg";
 import Image from "next/image";
 import axios from "axios";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { Button } from "../../common/Button/Button";
 import cookie from "js-cookie";
@@ -34,7 +34,7 @@ const LoginForm = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/users/login",
+        `${process.env.SERVER_URL}/users/login`,
         loginBody
       );
 
@@ -52,6 +52,13 @@ const LoginForm = () => {
       setBadData(true);
       console.log("err:", err);
       setLoading(false);
+    }
+  };
+
+  const handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      onLogin();
     }
   };
 
@@ -75,6 +82,7 @@ const LoginForm = () => {
                 type="email"
                 placeholder="Your email"
                 autoComplete="on"
+                onKeyDown={handleKeyDown}
               />
             </div>
 
@@ -91,6 +99,7 @@ const LoginForm = () => {
                 name="password"
                 type="password"
                 placeholder="Your password"
+                onKeyDown={handleKeyDown}
               />
             </div>
 

@@ -1,10 +1,15 @@
+.linkHolder {
+  text-decoration: none;
+  color: #212a31;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  width: 17rem;
-  height: 24rem;
+  width: 18.5rem;
+  height: 25rem;
   padding: 1rem;
   border: 0.1rem solid black;
   border-radius: 0.6rem;
@@ -17,11 +22,18 @@
   scale: 1.05;
 }
 .container .imageBox {
+  height: 10rem;
+  width: 100%;
   border-radius: 0.6rem;
-  box-shadow: rgba(149, 157, 165, 0.35) 0px 8px 24px;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  box-shadow: rgba(33, 42, 49, 0.25) 0px 8px 24px;
+  border: 0.1rem solid #2e3944;
   overflow: hidden;
 }
 .container .imageBox img {
+  height: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -31,9 +43,12 @@
   gap: 0.6rem;
 }
 .container .descriptionBox h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
   text-align: center;
-  font-size: 1.05rem;
-  margin-top: 0.5rem;
+  font-size: 1.1rem;
 }
 .container .descriptionBox h4,
 .container .descriptionBox h5,
@@ -54,7 +69,7 @@
 }
 .container .descriptionBox h5 {
   padding-bottom: 0.4rem;
-  border-bottom: 0.1rem solid black;
+  border-bottom: 0.1rem solid #2e3944;
 }
 .container .descriptionBox h6 {
   font-size: 0.7rem;

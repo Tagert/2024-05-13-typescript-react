@@ -1,17 +1,14 @@
 import styles from "./styles/CardWrapper.module.css";
-import Link from "next/link";
-import React from "react";
 import { TicketType } from "../../../types/ticket.type";
 import { UserType } from "../../../types/user.type";
 import { Card } from "../Card/Card";
 
 type CardWrapperProps = {
-  tickets: TicketType[] | TicketType;
-  users: UserType[] | UserType;
-  handleDelete: () => void;
+  tickets: TicketType[] | TicketType,
+  users: UserType[] | UserType,
 };
 
-const CardWrapper = ({ tickets, users, handleDelete }: CardWrapperProps) => {
+const CardWrapper = ({ tickets, users }: CardWrapperProps) => {
   const ticketsArray = Array.isArray(tickets) ? tickets : [tickets];
   const usersArray = Array.isArray(users) ? users : [users];
 
@@ -27,10 +24,10 @@ const CardWrapper = ({ tickets, users, handleDelete }: CardWrapperProps) => {
         const isAllUsers = usersArray.length > 1;
 
         return (
-          <React.Fragment key={`ticket-${ticket.ticket_id}`}>
+          <>
             {isAllUsers ? (
               <Card
-                key={`card-${ticket.ticket_id}`}
+                key={ticket.ticket_id}
                 ticket_id={ticket.ticket_id}
                 title={ticket.title}
                 from_location={ticket.from_location}
@@ -43,7 +40,7 @@ const CardWrapper = ({ tickets, users, handleDelete }: CardWrapperProps) => {
             ) : (
               <>
                 <Card
-                  key={`card-${ticket.ticket_id}`}
+                  key={ticket.ticket_id}
                   ticket_id={ticket.ticket_id}
                   title={ticket.title}
                   from_location={ticket.from_location}
@@ -53,30 +50,10 @@ const CardWrapper = ({ tickets, users, handleDelete }: CardWrapperProps) => {
                   userId={ticket.userId}
                   filteredUsers={userNames}
                 />
-                <div className={styles.detailsContainer}>
-                  <div className={styles.ticketDescription}>
-                    <h3>
-                      Remember that happiness is a way of travel - not a
-                      destination.
-                    </h3>
-                    <p>
-                      Deleting a travel card typically involves several steps to
-                      ensure that the deletion is intentional and that no
-                      important data is lost:
-                    </p>
-
-                    <p>If you are sure, please press the delete button.</p>
-                    <div className={styles.buttonHolder}>
-                      <button onClick={handleDelete}>Delete Card</button>
-                      <Link href={"/"} className={styles.linkHolder}>
-                        <button>Go Back</button>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                <div>Testing</div>
               </>
             )}
-          </React.Fragment>
+          </>
         );
       })}
     </div>

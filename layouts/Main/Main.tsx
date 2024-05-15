@@ -4,11 +4,12 @@ import { CardWrapper } from "../../components/spec/CardWrapper/CardWrapper";
 import { UserType } from "@/types/user.type";
 
 type MainProps = {
-  tickets: TicketType[];
-  users: UserType[];
+  tickets: TicketType[] | TicketType;
+  users: UserType[] | UserType;
+  handleDelete: () => void;
 };
 
-const Main = ({ tickets, users }: MainProps) => {
+const Main = ({ tickets, users, handleDelete }: MainProps) => {
   return (
     <main className={styles.container}>
       <div>
@@ -18,7 +19,11 @@ const Main = ({ tickets, users }: MainProps) => {
           traveling journey.
         </h1>
       </div>
-      <CardWrapper tickets={tickets} users={users} />
+      <CardWrapper
+        tickets={tickets}
+        users={users}
+        handleDelete={handleDelete}
+      />
     </main>
   );
 };

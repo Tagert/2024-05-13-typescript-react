@@ -11,7 +11,7 @@
 }
 .container a:nth-child(4) {
   padding: 0.38rem 1.65rem;
-  border-radius: 0.2rem;
+  border-radius: 0.4rem;
   border: 0.15rem solid #212a31;
 }
 .container a:nth-child(4):hover {

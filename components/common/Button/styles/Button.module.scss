@@ -1,14 +1,16 @@
+@use "../../../../styles/scss/variables";
+
 .loginBtn {
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 6.5rem;
   height: 2rem;
-  border: 0.1rem solid #161a30;
+  border: 0.1rem solid variables.$dark-text-color;
   border-radius: 0.4rem;
   margin-top: 1rem;
   outline: none;
-  color: #161a30;
+  color: variables.$dark-text-color;
   background: linear-gradient(
     270deg,
     rgba(227, 225, 217, 1) 0%,
@@ -17,6 +19,7 @@
   cursor: pointer;
 
   &:hover {
-    font-weight: bold;
+    color: variables.$light-text-color;
+    background: variables.$dark-text-color;
   }
 }

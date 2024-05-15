@@ -1,7 +1,85 @@
+@use "../../../../styles/scss/variables";
+
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 2rem 4rem;
+
+  .detailsContainer {
+    align-self: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 25rem;
+    height: 18.5rem;
+    padding: 2rem;
+    border: 0.1rem solid black;
+    border-radius: 0.6rem;
+    box-shadow: variables.$primary-shadow;
+    background-color: variables.$background-color;
+    transition: all 0.25s ease;
+    cursor: pointer;
+
+    .ticketDescription {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+
+      h3 {
+        text-align: center;
+        width: 20rem;
+        font-size: 1.1rem;
+      }
+
+      p {
+        text-align: justify;
+
+        &:nth-child(3) {
+          font-size: 0.9rem;
+          font-style: italic;
+        }
+      }
+      .buttonHolder {
+        display: flex;
+        gap: 1rem;
+
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: 6.5rem;
+          height: 2rem;
+          border: 0.1rem solid variables.$dark-text-color;
+          border-radius: 0.4rem;
+          margin-top: 1rem;
+          outline: none;
+          color: variables.$dark-text-color;
+          background: linear-gradient(
+            270deg,
+            rgba(227, 225, 217, 1) 0%,
+            rgba(242, 239, 229, 1) 100%
+          );
+          cursor: pointer;
+
+          &:hover {
+            color: variables.$dark-text-color;
+            background: #e94a23;
+          }
+
+          &:last-child:hover {
+            color: variables.$light-text-color;
+            background: variables.$dark-text-color;
+          }
+        }
+      }
+    }
+  }
+
+  .linkHolder {
+    text-decoration: none;
+  }
 }
