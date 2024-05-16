@@ -1,10 +1,14 @@
-@use "../../../../styles/components/responsive";
+@use "../../../../styles/scss/responsive";
 
 .container {
   position: relative;
   display: flex;
   justify-content: space-between;
   padding: 2rem;
+
+  @include responsive.xs {
+    padding: 2rem 1rem;
+  }
 
   &::before {
     content: "";
@@ -17,6 +21,7 @@
   }
 
   h1 {
+    align-self: center;
     letter-spacing: 0.1rem;
     font-weight: 600;
     cursor: pointer;

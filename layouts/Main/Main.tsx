@@ -13,11 +13,15 @@ const Main = ({ tickets, users, handleDelete }: MainProps) => {
   return (
     <main className={styles.container}>
       <div>
-        <h1>
-          Welcome to Travel Planner, aimed for new backpackers, working holiday
-          makers, students and gap year travelers for the first step in their
-          traveling journey.
-        </h1>
+        {Array.isArray(users) ? (
+          <h1>
+            Welcome to Travel Planner, aimed for new backpackers, working
+            holiday makers, students and gap year travelers for the first step
+            in their traveling journey.
+          </h1>
+        ) : (
+          <h1>Travel Planner: Learn more about your card and manage it.</h1>
+        )}
       </div>
       <CardWrapper
         tickets={tickets}

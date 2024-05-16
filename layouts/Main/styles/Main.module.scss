@@ -1,3 +1,5 @@
+@use "../../../styles/scss/responsive";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -9,5 +11,9 @@
     text-align: center;
     font-size: 1.8rem;
     max-width: 55rem;
+
+    @include responsive.xs {
+      width: 19rem;
+    }
   }
 }

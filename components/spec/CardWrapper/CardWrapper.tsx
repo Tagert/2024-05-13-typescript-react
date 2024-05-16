@@ -1,9 +1,10 @@
 import styles from "./styles/CardWrapper.module.css";
-import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/router";
 import { TicketType } from "../../../types/ticket.type";
 import { UserType } from "../../../types/user.type";
 import { Card } from "../Card/Card";
+import { Button } from "../../common/Button/Button";
 
 type CardWrapperProps = {
   tickets: TicketType[] | TicketType;
@@ -12,6 +13,8 @@ type CardWrapperProps = {
 };
 
 const CardWrapper = ({ tickets, users, handleDelete }: CardWrapperProps) => {
+  const router = useRouter();
+
   const ticketsArray = Array.isArray(tickets) ? tickets : [tickets];
   const usersArray = Array.isArray(users) ? users : [users];
 
@@ -67,10 +70,17 @@ const CardWrapper = ({ tickets, users, handleDelete }: CardWrapperProps) => {
 
                     <p>If you are sure, please press the delete button.</p>
                     <div className={styles.buttonHolder}>
-                      <button onClick={handleDelete}>Delete Card</button>
-                      <Link href={"/"} className={styles.linkHolder}>
-                        <button>Go Back</button>
-                      </Link>
+                      <Button
+                        isLoading={false}
+                        onClick={handleDelete}
+                        title="Delete Button"
+                      />
+
+                      <Button
+                        isLoading={false}
+                        onClick={() => router.push("/")}
+                        title="Go Back"
+                      />
                     </div>
                   </div>
                 </div>

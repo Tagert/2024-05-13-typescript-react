@@ -20,6 +20,9 @@
   transition: all 0.25s ease;
   cursor: pointer;
 }
+.container .detailsContainer:hover {
+  scale: 1.05;
+}
 .container .detailsContainer .ticketDescription {
   display: flex;
   flex-direction: column;

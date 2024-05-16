@@ -46,7 +46,7 @@ const Ticket = () => {
     };
 
     if (router.query.id) {
-      fetchData();
+      router.query.id && fetchData();
     }
   }, [router.query.id]);
 

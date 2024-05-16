@@ -1,43 +1,64 @@
 @use "../../../../styles/scss/variables";
 @use "../../../../styles/scss/responsive";
 
-.container {
+.outerContainer {
   display: flex;
-  align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 
-  a {
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: variables.$dark-text-color;
+  @include responsive.s {
+    gap: 0.5rem;
+    flex-direction: column-reverse;
+  }
 
-    &:nth-child(4) {
-      padding: 0.38rem 1.65rem;
-      border-radius: 0.4rem;
-      border: 0.15rem solid variables.$dark-text-color;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
 
-      &:hover {
-        color: variables.$light-text-color;
-        background-color: variables.$dark-text-color;
+    a {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: variables.$dark-text-color;
+
+      &:nth-child(4) {
+        padding: 0.38rem 1.65rem;
+        border-radius: 0.4rem;
+        border: 0.15rem solid variables.$dark-text-color;
+
+        &:hover {
+          color: variables.$light-text-color;
+          background-color: variables.$dark-text-color;
+        }
+      }
+
+      @include responsive.md {
+        display: none;
       }
     }
 
-    @include responsive.md {
+    button {
+      all: unset;
       display: none;
+
+      @include responsive.md {
+        display: inline-block;
+      }
+
+      svg {
+        cursor: pointer;
+      }
     }
   }
 
-  button {
-    all: unset;
-    display: none;
-
-    @include responsive.md {
-      display: inline-block;
-    }
+  .linkHolder {
+    width: 2.3rem;
 
     svg {
-      cursor: pointer;
+      height: 100%;
+      width: 100%;
+      color: variables.$accent-color;
     }
   }
 }

@@ -1,14 +1,14 @@
 import styles from "../styles/App.module.css";
-import cookies from "js-cookie";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { getCookie } from "cookies-next";
 import { TicketType } from "../types/ticket.type";
 import { UserType } from "../types/user.type";
 import { Spinner } from "../components/common/Spinner/Spinner";
 import { Header } from "../layouts/Header/Header";
 import { Main } from "../layouts/Main/Main";
+import { Footer } from "../layouts/Footer/Footer";
 
 type AppProps = {
   tickets: TicketType[];
@@ -83,6 +83,7 @@ const App = ({ tickets, users, status }: AppProps) => {
           <Spinner />
         </div>
       )}
+      <Footer />
     </div>
   );
 };

@@ -1,37 +1,56 @@
-.container {
+.outerContainer {
+  display: flex;
+  gap: 2rem;
+}
+@media screen and (max-width: 500px) {
+  .outerContainer {
+    gap: 0.5rem;
+    flex-direction: column-reverse;
+  }
+}
+.outerContainer .container {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 3rem;
 }
-.container a {
+.outerContainer .container a {
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
   color: #212a31;
 }
-.container a:nth-child(4) {
+.outerContainer .container a:nth-child(4) {
   padding: 0.38rem 1.65rem;
   border-radius: 0.4rem;
   border: 0.15rem solid #212a31;
 }
-.container a:nth-child(4):hover {
+.outerContainer .container a:nth-child(4):hover {
   color: #d3d9d4;
   background-color: #212a31;
 }
 @media screen and (max-width: 950px) {
-  .container a {
+  .outerContainer .container a {
     display: none;
   }
 }
-.container button {
+.outerContainer .container button {
   all: unset;
   display: none;
 }
 @media screen and (max-width: 950px) {
-  .container button {
+  .outerContainer .container button {
     display: inline-block;
   }
 }
-.container button svg {
+.outerContainer .container button svg {
   cursor: pointer;
+}
+.outerContainer .linkHolder {
+  width: 2.3rem;
+}
+.outerContainer .linkHolder svg {
+  height: 100%;
+  width: 100%;
+  color: #124e66;
 }/*# sourceMappingURL=NavList.module.css.map */

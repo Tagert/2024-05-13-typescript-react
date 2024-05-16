@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   transition: all 0.5s linear;
-  margin-top: 2rem;
+  margin-top: 8rem;
   z-index: 10;
 }
 .login_card .login_modal {
@@ -10,8 +10,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 24.5rem;
-  height: 16rem;
+  min-width: 24rem;
+  height: 14rem;
   padding: 1rem;
   border-radius: 0.4rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -19,6 +19,7 @@
 }
 .login_card .login_modal .loginCloseBtn {
   width: 1.2rem;
+  height: 1.2rem;
   align-self: flex-end;
 }
 .login_card .login_modal .loginCloseBtn button {
@@ -38,8 +39,13 @@
   gap: 0.5rem;
   font-size: 0.9rem;
 }
+.login_card .login_modal .active_login h4 {
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
 .login_card .login_modal .active_login p {
   font-size: 0.8rem;
+  letter-spacing: 0.1rem;
 }
 .login_card .login_modal .active_login .input {
   display: flex;
@@ -51,9 +57,10 @@
 }
 .login_card .login_modal .active_login .input input {
   max-width: 12rem;
-  border: 0.1rem solid #212a31;
-  border-radius: 0.4rem;
   padding: 0.3rem;
+  border: 0.1rem solid #d3d9d4;
+  border-radius: 0.4rem;
+  box-shadow: rgba(50, 50, 93, 0.75) 1.95px 1.95px 2.6px;
   outline: none;
 }
 .login_card .login_modal .active_login .input input::-moz-placeholder {
@@ -88,6 +95,9 @@
   align-items: center;
   justify-content: flex-start;
   gap: 0.8rem;
+}
+.login_card .login_modal .btn_info button {
+  margin-top: 0.5rem;
 }
 .login_card .login_modal .btn_info .error {
   height: 1rem;

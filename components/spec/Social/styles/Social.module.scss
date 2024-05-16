@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 18.7rem;
+
+  h4 {
+    text-align: center;
+  }
+
+  .address {
+    display: flex;
+    justify-content: center;
+
+    button {
+      all: unset;
+      font-size: 0.95rem;
+      letter-spacing: 0.1rem;
+      color: #f6f6f7;
+      cursor: pointer;
+    }
+  }
+
+  .social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+
+    svg {
+      height: 1.5rem;
+      width: 1.5rem;
+      cursor: pointer;
+    }
+  }
+}

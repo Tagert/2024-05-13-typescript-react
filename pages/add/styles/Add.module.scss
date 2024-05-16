@@ -1,11 +1,53 @@
-@use "../../../../styles/scss/variables";
+@use "../../../styles/scss/variables";
 
 .container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  padding: 2rem 4rem;
+  padding: 4rem;
+  margin-top: 4rem;
+
+  .inputBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 18.5rem;
+    height: 25rem;
+    padding: 1rem;
+    border: 0.1rem solid black;
+    border-radius: 0.6rem;
+    box-shadow: variables.$primary-shadow;
+    background-color: variables.$background-color;
+    transition: all 0.25s ease;
+
+    h4 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+
+      span {
+        font-style: italic;
+        text-decoration: underline;
+      }
+    }
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.12rem;
+
+      input {
+        padding: 0.3rem 0.3rem 0.3rem 0.8rem;
+        border: 0.1rem solid variables.$background-color;
+        border-radius: 0.6rem;
+        box-shadow: variables.$additional-shadow;
+      }
+    }
+  }
 
   .detailsContainer {
     align-self: center;
@@ -51,7 +93,7 @@
         display: flex;
         gap: 1rem;
 
-        button {
+        .validBtn {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -70,8 +112,8 @@
           cursor: pointer;
 
           &:hover {
-            color: variables.$dark-text-color;
-            background: #e94a23;
+            color: variables.$light-text-color;
+            background: variables.$accent-color;
           }
 
           &:last-child:hover {
@@ -79,11 +121,26 @@
             background: variables.$dark-text-color;
           }
         }
+
+        .invalidBtn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: 6.5rem;
+          height: 2rem;
+          border: 0.1rem solid variables.$dark-text-color;
+          border-radius: 0.4rem;
+          margin-top: 1rem;
+          outline: none;
+          color: variables.$dark-text-color;
+          background: linear-gradient(
+            270deg,
+            rgba(227, 225, 217, 1) 0%,
+            rgba(242, 239, 229, 1) 100%
+          );
+          cursor: not-allowed;
+        }
       }
     }
-  }
-
-  .linkHolder {
-    text-decoration: none;
   }
 }

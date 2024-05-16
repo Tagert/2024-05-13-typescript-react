@@ -72,7 +72,7 @@ const LoginForm = () => {
         </Link>
         <div className={styles.active_login}>
           <h4>Welcome back</h4>
-          <p>Log into your Account</p>
+          <p>Please enter your login and password!</p>
           <div className={styles.input}>
             <div className={styles.username_box}>
               <input
@@ -110,7 +110,7 @@ const LoginForm = () => {
         </div>
 
         <div className={styles.btn_info}>
-          <Button isLoading={isLoading} onLogin={onLogin} title="Login" />
+          <Button isLoading={isLoading} onClick={onLogin} title="Login" />
 
           {isError && (
             <p className={styles.error}>Please fill all the inputs</p>

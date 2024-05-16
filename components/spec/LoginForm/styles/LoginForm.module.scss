@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   transition: all 0.5s linear;
-  margin-top: 2rem;
+  margin-top: 8rem;
   z-index: 10;
 
   .login_modal {
@@ -12,8 +12,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 24.5rem;
-    height: 16rem;
+    min-width: 24rem;
+    height: 14rem;
     padding: 1rem;
     border-radius: 0.4rem;
     box-shadow: variables.$primary-shadow;
@@ -21,6 +21,7 @@
 
     .loginCloseBtn {
       width: 1.2rem;
+      height: 1.2rem;
       align-self: flex-end;
 
       button {
@@ -43,8 +44,14 @@
       gap: 0.5rem;
       font-size: 0.9rem;
 
+      h4 {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+      }
+
       p {
         font-size: 0.8rem;
+        letter-spacing: 0.1rem;
       }
 
       .input {
@@ -57,9 +64,10 @@
 
         input {
           max-width: 12rem;
-          border: 0.1rem solid variables.$dark-text-color;
-          border-radius: 0.4rem;
           padding: 0.3rem;
+          border: 0.1rem solid variables.$background-color;
+          border-radius: 0.4rem;
+          box-shadow: variables.$additional-shadow;
           outline: none;
 
           &::placeholder {
@@ -96,6 +104,10 @@
       align-items: center;
       justify-content: flex-start;
       gap: 0.8rem;
+
+      button {
+        margin-top: 0.5rem;
+      }
 
       .error {
         height: 1rem;

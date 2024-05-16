@@ -9,4 +9,9 @@
   text-align: center;
   font-size: 1.8rem;
   max-width: 55rem;
+}
+@media screen and (max-width: 420px) {
+  .container h1 {
+    width: 19rem;
+  }
 }/*# sourceMappingURL=Main.module.css.map */

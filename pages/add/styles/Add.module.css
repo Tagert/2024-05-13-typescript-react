@@ -1,0 +1,121 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 4rem;
+  margin-top: 4rem;
+}
+.container .inputBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 18.5rem;
+  height: 25rem;
+  padding: 1rem;
+  border: 0.1rem solid black;
+  border-radius: 0.6rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background-color: #d3d9d4;
+  transition: all 0.25s ease;
+}
+.container .inputBox h4 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.container .inputBox h4 span {
+  font-style: italic;
+  text-decoration: underline;
+}
+.container .inputBox label {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.12rem;
+}
+.container .inputBox label input {
+  padding: 0.3rem 0.3rem 0.3rem 0.8rem;
+  border: 0.1rem solid #d3d9d4;
+  border-radius: 0.6rem;
+  box-shadow: rgba(50, 50, 93, 0.75) 1.95px 1.95px 2.6px;
+}
+.container .detailsContainer {
+  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 25rem;
+  height: 18.5rem;
+  padding: 2rem;
+  border: 0.1rem solid black;
+  border-radius: 0.6rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background-color: #d3d9d4;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.container .detailsContainer:hover {
+  scale: 1.05;
+}
+.container .detailsContainer .ticketDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.container .detailsContainer .ticketDescription h3 {
+  text-align: center;
+  width: 20rem;
+  font-size: 1.1rem;
+}
+.container .detailsContainer .ticketDescription p {
+  text-align: justify;
+}
+.container .detailsContainer .ticketDescription p:nth-child(3) {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+.container .detailsContainer .ticketDescription .buttonHolder {
+  display: flex;
+  gap: 1rem;
+}
+.container .detailsContainer .ticketDescription .buttonHolder .validBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 6.5rem;
+  height: 2rem;
+  border: 0.1rem solid #212a31;
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  outline: none;
+  color: #212a31;
+  background: linear-gradient(270deg, rgb(227, 225, 217) 0%, rgb(242, 239, 229) 100%);
+  cursor: pointer;
+}
+.container .detailsContainer .ticketDescription .buttonHolder .validBtn:hover {
+  color: #d3d9d4;
+  background: #124e66;
+}
+.container .detailsContainer .ticketDescription .buttonHolder .validBtn:last-child:hover {
+  color: #d3d9d4;
+  background: #212a31;
+}
+.container .detailsContainer .ticketDescription .buttonHolder .invalidBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 6.5rem;
+  height: 2rem;
+  border: 0.1rem solid #212a31;
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  outline: none;
+  color: #212a31;
+  background: linear-gradient(270deg, rgb(227, 225, 217) 0%, rgb(242, 239, 229) 100%);
+  cursor: not-allowed;
+}/*# sourceMappingURL=Add.module.css.map */
