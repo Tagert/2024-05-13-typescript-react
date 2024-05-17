@@ -6,9 +6,8 @@ import { getCookie } from "cookies-next";
 import { TicketType } from "../types/ticket.type";
 import { UserType } from "../types/user.type";
 import { Spinner } from "../components/common/Spinner/Spinner";
-import { Header } from "../layouts/Header/Header";
 import { Main } from "../layouts/Main/Main";
-import { Footer } from "../layouts/Footer/Footer";
+import { PageTemplate } from "../components/spec/PageTemplate/PageTemplate";
 
 type AppProps = {
   tickets: TicketType[];
@@ -74,17 +73,17 @@ const App = ({ tickets, users, status }: AppProps) => {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <Header />
-      {tickets ? (
-        <Main tickets={tickets} users={users || []} handleDelete={() => {}} />
-      ) : (
-        <div className={styles.spinner}>
-          <Spinner />
-        </div>
-      )}
-      <Footer />
-    </div>
+    <PageTemplate>
+      <div className={styles.container}>
+        {tickets ? (
+          <Main tickets={tickets} users={users || []} handleDelete={() => {}} />
+        ) : (
+          <div className={styles.spinner}>
+            <Spinner />
+          </div>
+        )}
+      </div>
+    </PageTemplate>
   );
 };
 

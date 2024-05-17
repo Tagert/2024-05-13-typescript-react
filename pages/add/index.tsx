@@ -1,10 +1,11 @@
 import styles from "./styles/Add.module.css";
 import cookies from "js-cookie";
 import axios from "axios";
-import { useRouter } from "next/router";
 import { useState } from "react";
-import { Button } from "@/components/common/Button/Button";
-import { Header } from "@/layouts/Header/Header";
+import { useRouter } from "next/router";
+import { PageTemplate } from "../../components/spec/PageTemplate/PageTemplate";
+import { Button } from "../../components/common/Button/Button";
+import { Modal } from "../../components/spec/Modal/Modal";
 
 const Add = () => {
   const router = useRouter();
@@ -51,9 +52,7 @@ const Add = () => {
     title && fromLocation && toLocation && imageUrl && price;
 
   return (
-    <>
-      <Header />
-
+    <PageTemplate>
       <main className={styles.container}>
         <div className={styles.inputBox}>
           <h4>
@@ -146,7 +145,7 @@ const Add = () => {
           </div>
         </div>
       </main>
-    </>
+    </PageTemplate>
   );
 };
 

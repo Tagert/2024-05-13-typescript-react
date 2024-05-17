@@ -78,4 +78,8 @@
   font-size: 1.1rem;
   font-weight: 500;
   color: black;
+}
+.container .linkHolder {
+  text-decoration: none;
+  color: #212a31;
 }/*# sourceMappingURL=Navbar.module.css.map */

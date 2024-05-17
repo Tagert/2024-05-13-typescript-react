@@ -1,11 +1,17 @@
 @use "../../../styles/scss/variables";
+@use "../../../styles/scss/responsive";
 
 .container {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1.5rem;
-  padding: 4rem;
-  margin-top: 4rem;
+  padding: 2rem 4rem;
+  flex: 1;
+
+  @include responsive.lg {
+    flex-direction: column;
+  }
 
   .inputBox {
     display: flex;

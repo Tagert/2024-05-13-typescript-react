@@ -50,35 +50,6 @@
       .buttonHolder {
         display: flex;
         gap: 1rem;
-
-        button {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          min-width: 6.5rem;
-          height: 2rem;
-          border: 0.1rem solid variables.$dark-text-color;
-          border-radius: 0.4rem;
-          margin-top: 1rem;
-          outline: none;
-          color: variables.$dark-text-color;
-          background: linear-gradient(
-            270deg,
-            rgba(227, 225, 217, 1) 0%,
-            rgba(242, 239, 229, 1) 100%
-          );
-          cursor: pointer;
-
-          &:hover {
-            color: variables.$dark-text-color;
-            background: #e94a23;
-          }
-
-          &:last-child:hover {
-            color: variables.$light-text-color;
-            background: variables.$dark-text-color;
-          }
-        }
       }
     }
   }

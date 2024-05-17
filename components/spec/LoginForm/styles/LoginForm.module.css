@@ -1,9 +1,11 @@
 .login_card {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex: 1;
+  margin-top: 2rem;
   transition: all 0.5s linear;
-  margin-top: 8rem;
-  z-index: 10;
+  z-index: 1;
 }
 .login_card .login_modal {
   display: flex;

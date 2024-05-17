@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./styles/Navbar.module.css";
+import Link from "next/link";
 import { links } from "../../../constants/links";
 import { NavList } from "../NavList/NavList";
 import { MobileMenu } from "../MobileMenu/MobileMenu";
@@ -15,7 +16,9 @@ const Navbar = () => {
 
   return (
     <div className={styles.container}>
-      <h1>{logo}</h1>
+      <Link href={"/"} className={styles.linkHolder}>
+        <h1>{logo}</h1>
+      </Link>
 
       <NavList onBurgerBtnClick={onBurgerBtnClick} links={links} />
 

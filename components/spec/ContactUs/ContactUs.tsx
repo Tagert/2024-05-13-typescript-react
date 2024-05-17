@@ -6,8 +6,18 @@ const ContactUs = () => {
       <h4>Contact Us</h4>
       <div className={styles.contactBox}>
         <div className={styles.userData}>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            autoComplete="name"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            autoComplete="email"
+          />
         </div>
 
         <div className={styles.messageBox}>

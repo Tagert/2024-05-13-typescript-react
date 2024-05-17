@@ -1,10 +1,11 @@
 import styles from "./styles/CardWrapper.module.css";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { TicketType } from "../../../types/ticket.type";
 import { UserType } from "../../../types/user.type";
 import { Card } from "../Card/Card";
 import { Button } from "../../common/Button/Button";
+import { Modal } from "../Modal/Modal";
 
 type CardWrapperProps = {
   tickets: TicketType[] | TicketType;
@@ -17,6 +18,8 @@ const CardWrapper = ({ tickets, users, handleDelete }: CardWrapperProps) => {
 
   const ticketsArray = Array.isArray(tickets) ? tickets : [tickets];
   const usersArray = Array.isArray(users) ? users : [users];
+
+  const [isShowWarning, setShowWarning] = useState(false);
 
   return (
     <div className={styles.container}>
@@ -72,8 +75,9 @@ const CardWrapper = ({ tickets, users, handleDelete }: CardWrapperProps) => {
                     <div className={styles.buttonHolder}>
                       <Button
                         isLoading={false}
-                        onClick={handleDelete}
+                        onClick={() => setShowWarning(true)}
                         title="Delete Button"
+                        type="WARNING"
                       />
 
                       <Button
@@ -84,6 +88,14 @@ const CardWrapper = ({ tickets, users, handleDelete }: CardWrapperProps) => {
                     </div>
                   </div>
                 </div>
+
+                {isShowWarning && (
+                  <Modal
+                    message="Do you really want to delete this item?"
+                    onCancel={() => setShowWarning(false)}
+                    onConfirm={() => handleDelete()}
+                  />
+                )}
               </>
             )}
           </React.Fragment>

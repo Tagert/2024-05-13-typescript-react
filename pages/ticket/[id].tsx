@@ -7,6 +7,7 @@ import { TicketType } from "../../types/ticket.type";
 import { UserType } from "../../types/user.type";
 import { Header } from "../../layouts/Header/Header";
 import { Main } from "../../layouts/Main/Main";
+import { PageTemplate } from "../../components/spec/PageTemplate/PageTemplate";
 
 const Ticket = () => {
   const router = useRouter();
@@ -68,13 +69,13 @@ const Ticket = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <Header />
-
-      {ticket && user && (
-        <Main tickets={ticket} users={user} handleDelete={handleDelete} />
-      )}
-    </div>
+    <PageTemplate>
+      <div className={styles.container}>
+        {ticket && user && (
+          <Main tickets={ticket} users={user} handleDelete={handleDelete} />
+        )}
+      </div>
+    </PageTemplate>
   );
 };
 

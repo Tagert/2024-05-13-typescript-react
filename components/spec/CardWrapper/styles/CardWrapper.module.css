@@ -46,28 +46,6 @@
   display: flex;
   gap: 1rem;
 }
-.container .detailsContainer .ticketDescription .buttonHolder button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 6.5rem;
-  height: 2rem;
-  border: 0.1rem solid #212a31;
-  border-radius: 0.4rem;
-  margin-top: 1rem;
-  outline: none;
-  color: #212a31;
-  background: linear-gradient(270deg, rgb(227, 225, 217) 0%, rgb(242, 239, 229) 100%);
-  cursor: pointer;
-}
-.container .detailsContainer .ticketDescription .buttonHolder button:hover {
-  color: #212a31;
-  background: #e94a23;
-}
-.container .detailsContainer .ticketDescription .buttonHolder button:last-child:hover {
-  color: #d3d9d4;
-  background: #212a31;
-}
 .container .linkHolder {
   text-decoration: none;
 }/*# sourceMappingURL=CardWrapper.module.css.map */

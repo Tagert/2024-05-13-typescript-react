@@ -18,7 +18,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={`${styles.loginBtn} ${type === "WARNING" && styles.warring} ${
+      className={` ${type === "WARNING" ? styles.warning : styles.loginBtn} ${
         className && className
       }`}
       onClick={onClick}
